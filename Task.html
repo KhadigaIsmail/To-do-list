@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+  <head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+
+    <script type="text/javascript">
+
+    
+    function generatex()
+    {
+       var x = document.getElementById("gen").value;
+        var e =  document.createElement('div');
+        e.className = "c1";
+        var menudisplay = 0;
+        var button = document.createElement("button");
+        /*menu*/
+        var menu =  document.createElement('div');
+        menu.className="menuclass";
+        var ul =  document.createElement('ul');
+        var li =  document.createElement('li');
+        var Delett = document.createTextNode("Delete");
+        var editt = document.createTextNode("Edit");
+        var lii =  document.createElement('li');
+        li.appendChild(Delett);
+        ul.appendChild(li);
+        li.onclick = function(){ e.remove();};
+        lii.appendChild(editt);
+        ul.appendChild(lii);
+        lii.onclick = function(){document.getElementById("gen").value=par.innerHTML;  }
+        menu.appendChild(ul);
+        e.onclick = function (){if(menudisplay==0) menu.style.display='block'; else menu.style.display='none'; menudisplay= !menudisplay;}
+        /*three dots menu*/
+        button.className = "threedots";
+        var par = document.createElement('p');
+        par.className="pa";
+        var y = document.createTextNode(x);
+        par.appendChild(y);
+      
+        e.appendChild(par);
+        e.appendChild(button);
+        e.appendChild(menu);
+
+        document.getElementById("div").appendChild(e);
+        document.getElementById("gen").value="";
+    }
+
+    </script>
+
+    <style type="text/css">
+
+    div.c1
+    {
+       border-bottom: outset;
+       border-right: outset ;
+       width: 100%;
+       height: 350;
+       position: relative;
+        display: inline-block;
+       
+
+
+    }
+    div.menuclass
+    {
+      display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    }
+    p.pa
+    {
+      width: 100 px;
+      height: 30px;
+    
+      display: inline;
+      
+    }
+    button.threedots
+    {
+      
+      background-image: url(https://www.google.com.eg/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiuh8WI36HeAhWCUlAKHW32AeoQjRx6BAgBEAU&url=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fshow-more-button-with-three-dots_61140&psig=AOvVaw3yUHWnONzszaHKom02BAfe&ust=1540562066563287);
+      height: 30px ;
+      width: 30 px;
+      display: inline;
+      float:right;
+      
+      
+    }
+    div.main
+    {
+      
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+
+    }
+    input[type=text], select {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+button {
+   
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+    </style>
+  </head>
+  <body id ="id">
+
+    <div class="main">
+      <h1>insert your items</h1>
+      <input type="text" id = "gen">
+      <button id="genbt" onclick="generatex();">INSERT</button>
+      <br> <br>
+       <span class="threedots"></span>
+    </div>
+
+    <div id="div"><div>
+
+
+  </body>
+
+</html>
+
+
